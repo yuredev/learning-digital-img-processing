@@ -3,7 +3,7 @@ close all
 
 pkg load image
 
-artorias = uint8(imread('./imgs/artorias.jpg'));
+artorias = uint8(imread('../imgs/artorias.jpg'));
 
 figure(1);
 imshow(artorias);

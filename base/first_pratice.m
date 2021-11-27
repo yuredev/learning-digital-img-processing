@@ -1,7 +1,7 @@
 close all
 clear all
 
-im = imread('./imgs/squares.png');
+im = imread('../imgs/squares.png');
 imnova = im;
 
 for i = 1:size(imnova, 1)

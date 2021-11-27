@@ -5,7 +5,7 @@ close all
 
 pkg load image
 
-lenaRgb = uint8(imread('./imgs/lena.jpg'));
+lenaRgb = uint8(imread('../imgs/lena.jpg'));
 lenaGray = rgb2gray(lenaRgb);
 
 figure(1);

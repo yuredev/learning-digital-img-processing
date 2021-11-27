@@ -1,7 +1,7 @@
 close all
 clear all
 
-lena_rgb = uint8(imread('./imgs/lena.jpg'));
+lena_rgb = uint8(imread('../imgs/lena.jpg'));
 
 lena_red = lena_rgb(:, :, 1);
 lena_blue = lena_rgb(:, :, 2);

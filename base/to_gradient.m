@@ -1,7 +1,7 @@
 clear all
 close all
 
-lena = uint8(imread('./imgs/lena.jpg'));
+lena = uint8(imread('../imgs/lena.jpg'));
 
 lena_gray = lena(:, :, 1) * 0.3 + lena(:, :, 2) * 0.59 + lena(:, :, 3) * 0.11;
 

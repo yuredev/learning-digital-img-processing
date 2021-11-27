@@ -3,7 +3,7 @@ close all
 
 pkg load image
 
-solaire = uint8(imread('./imgs/solaire.jpg'));
+solaire = uint8(imread('../imgs/solaire.jpg'));
 
 figure(1);
 imshow(solaire);
