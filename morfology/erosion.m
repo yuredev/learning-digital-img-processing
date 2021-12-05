@@ -31,6 +31,7 @@ imshow(img);
 
 edges = zeros(rowCount, columnCount, 1);
 
+% no algoritmo de erosão pegamos as bordas internas
 for i = 1:rowCount
     for j = 1:columnCount
         if (img(i, j) == 1 && (~doesStrElementFit(img, i, j)))

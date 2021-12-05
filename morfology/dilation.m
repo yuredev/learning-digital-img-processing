@@ -15,6 +15,7 @@ imshow(img);
 
 edges = zeros(rowCount, columnCount, 1);
 
+% no algoritmo de dilatação pegamos as bordas externas
 for i = 1:rowCount
     for j = 1:columnCount
         if img(i, j) == 1
