@@ -3,7 +3,7 @@ close all
 
 pkg load image
 
-img = uint8(imread('../imgs/halo_infinite.jpeg'));
+img = rgb2gray(uint8(imread('../imgs/solaire.jpg')));
 figure(1);
 imshow(img);
 
@@ -17,24 +17,25 @@ function pixel = getPixelFiltered(im, i, j)
         -1 -1 -1
     ];
     pixel = (
-        imgFilter(1, 1) * im(i - 1, j - 1, :) +
-        imgFilter(1, 2) * im(i - 1, j, :) +
-        imgFilter(1, 3) * im(i - 1, j + 1, :) +
-        imgFilter(2, 1) * im(i, j - 1, :) +
-        imgFilter(2, 2) * im(i, j, :) +
-        imgFilter(2, 3) * im(i, j + 1, :) +
-        imgFilter(3, 1) * im(i + 1, j - 1, :) +
-        imgFilter(3, 2) * im(i + 1, j, :) +
-        imgFilter(3, 3) * im(i + 1, j + 1, :)
+        imgFilter(1, 1) * im(i - 1, j - 1) +
+        imgFilter(1, 2) * im(i - 1, j) +
+        imgFilter(1, 3) * im(i - 1, j + 1) +
+        imgFilter(2, 1) * im(i, j - 1) +
+        imgFilter(2, 2) * im(i, j) +
+        imgFilter(2, 3) * im(i, j + 1) +
+        imgFilter(3, 1) * im(i + 1, j - 1) +
+        imgFilter(3, 2) * im(i + 1, j) +
+        imgFilter(3, 3) * im(i + 1, j + 1)
     );
     return;
 endfunction
 
-filteredImg = zeros(rowCount, columnCount, 3);
+filteredImg = uint8(zeros(rowCount, columnCount, 1));
 
 for i = 2: rowCount - 1
     for j = 2: columnCount - 1
-        filteredImg(i, j, :) = getPixelFiltered(img, i, j);
+        filteredImg(i, j) = getPixelFiltered(img, i, j);
+        % disp(getPixelFiltered(img, i, j))
     endfor
 endfor
 
