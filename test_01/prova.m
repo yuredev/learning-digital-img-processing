@@ -3,7 +3,7 @@ close all
 
 pkg load image
 
-photo8 = uint8(imread('./imgs/foto8.jpg'));
+photo8 = uint8(imread('../imgs/test_01/foto8.jpg'));
 
 rowCount = size(photo8, 1);
 collumnCount = size(photo8, 2);
@@ -57,7 +57,7 @@ end
 
 % --------------------------------- aplicar máscara
 
-mask = uint8(imread('./imgs/mascara4.jpg'));
+mask = uint8(imread('../imgs/test_01/mascara4.jpg'));
 maskFixed = zeros(rowCount, collumnCount, 3);
 
 % deixar tudo que não vai pra o resultado final preto
@@ -108,7 +108,7 @@ end
 
 % ---------------------- colocar img8 dentro do quadrado pintado de verde
 
-colorsImg = uint8(imread('./imgs/img8.jpg'));
+colorsImg = uint8(imread('../imgs/test_01/img8.jpg'));
 merged = maskedImg;
 
 for i = 1:rowCount
@@ -124,7 +124,7 @@ end
 
 % ------------------------------------------------ manipular assinatura
 
-signature = uint8(imread('./imgs/ass.jpg'));
+signature = uint8(imread('../imgs/test_01/ass.jpg'));
 
 % negativar assinatura
 % obs: fiz direto pois já usei o negativo manual anteriormente
