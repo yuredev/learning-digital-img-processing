@@ -10,7 +10,7 @@ imshow(img);
 rowCount = size(img, 1);
 columnCount = size(img, 2);
 
-function pixel = getPixelFiltered(im, i, j)
+function pixel = getFilteredPixel(im, i, j)
     imgFilter = [
         -1 -1 -1;
         -1 8 -1;
@@ -34,8 +34,8 @@ filteredImg = uint8(zeros(rowCount, columnCount, 1));
 
 for i = 2: rowCount - 1
     for j = 2: columnCount - 1
-        filteredImg(i, j) = getPixelFiltered(img, i, j);
-        % disp(getPixelFiltered(img, i, j))
+        filteredImg(i, j) = getFilteredPixel(img, i, j);
+        % disp(getFilteredPixel(img, i, j))
     endfor
 endfor
 
